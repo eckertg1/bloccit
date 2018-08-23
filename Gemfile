@@ -37,6 +37,7 @@ gem 'bootstrap-sass'
 group :development, :test do 
   gem 'rspec-rails', '~> 3.0'
   gem 'rails-controller-testing'
+  gem 'shoulda'
 end
 
 # Reduces boot times through caching; required in config/boot.rb
