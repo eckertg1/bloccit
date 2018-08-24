@@ -17,6 +17,14 @@ posts = Post.all
     )
 end
 
+50.times do
+    Advertisement.create!(
+        title: RandomData.random_sentence,
+        copy: RandomData.random_paragraph,
+        price: 10
+        )
+end
+
 Post.find_or_create_by!(title: "Geoff's Post", body: "Post Body")
 Comment.find_or_create_by!(
     post: Post.find(51),
@@ -25,3 +33,4 @@ Comment.find_or_create_by!(
 puts "Seed Finished"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
+puts "#{Advertisement.count} advertisements created"
