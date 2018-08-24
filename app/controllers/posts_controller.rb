@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   end
 
   def new
+    puts params[:topic_id]
     @topic = Topic.find(params[:topic_id])
     @post = Post.new
   end
