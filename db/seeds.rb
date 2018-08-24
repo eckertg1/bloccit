@@ -17,9 +17,9 @@ posts = Post.all
     )
 end
 
-Post.find_or_create_by!(title: "Geoff's Post", body: "Post Body")
+uniquepost = Post.find_or_create_by!(title: "Geoff's Post", body: "Post Body")
 Comment.find_or_create_by!(
-    post: Post.find(51),
+    post: uniquepost,
     body: "This is a unique comment"
     )
 puts "Seed Finished"
