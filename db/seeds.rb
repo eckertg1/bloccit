@@ -1,5 +1,12 @@
 require 'random_data'
 
+15.times do 
+    Topic.create!(
+        name: RandomData.random_sentence,
+        description: RandomData.random_paragraph
+        )
+end
+
 50.times do
     
     Post.create!(
@@ -17,11 +24,7 @@ posts = Post.all
     )
 end
 
-Post.find_or_create_by!(title: "Geoff's Post", body: "Post Body")
-Comment.find_or_create_by!(
-    post: Post.find(51),
-    body: "This is a unique comment"
-    )
 puts "Seed Finished"
+puts "#{Topic.count} topics created"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
