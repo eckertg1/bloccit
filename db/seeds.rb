@@ -16,12 +16,14 @@ posts = Post.all
         body: RandomData.random_paragraph
     )
 end
-
-Post.find_or_create_by!(title: "Geoff's Post", body: "Post Body")
-Comment.find_or_create_by!(
-    post: Post.find(51),
-    body: "This is a unique comment"
-    )
+50.times do 
+    Question.create!(
+        title: RandomData.random_sentence,
+        body: RandomData.random_paragraph,
+        resolved: false
+        )
+end
 puts "Seed Finished"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
+puts "#{Question.count} questions created"
