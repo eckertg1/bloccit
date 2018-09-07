@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
        render :new
      end
    end
- 
+   
    def destroy
 
      destroy_session(current_user)
